@@ -72,7 +72,7 @@ const Card = ({ product }: any) => {
     }
   };
 
-  const checkWishlist = () => {
+  const checkWishlist = React.useCallback(() => {
     const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
     const isInWishlist = wishlist.find((item: any) => item.id === product.id);
     if (isInWishlist) {
@@ -80,11 +80,11 @@ const Card = ({ product }: any) => {
     } else {
       return setIsInWishlist(false);
     }
-  };
+  }, [product.id]);
 
   React.useEffect(() => {
     checkWishlist();
-  }, []);
+  }, [checkWishlist]);
 
   return (
     <div className="card-inner-container">
@@ -102,7 +102,7 @@ const Card = ({ product }: any) => {
             <IoIosHeartEmpty color="red" />
           )}
         </div>
-        <img src={product.image} alt="Product Image" />
+        <img src={product.image} alt="Product" />
         <div className="card-content">
           <p className="flex title">
             <span>{product.title}</span>

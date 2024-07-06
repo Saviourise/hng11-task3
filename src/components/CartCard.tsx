@@ -54,7 +54,7 @@ const CartCard = ({ item }: any) => {
           </div>
         </div>
       </div>
-      <img className="cart-img" src={item.image} />
+      <img className="cart-img" alt="cart" src={item.image} />
     </div>
   );
 };
