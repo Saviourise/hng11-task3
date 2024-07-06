@@ -1,0 +1,90 @@
+.products-container {
+  padding: 50px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.products-container > div.firstDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.products-container > div.firstDiv p,
+.products-container > div.secondDiv,
+.products-container > div.lastDiv {
+  font-size: 28px;
+  color: #767479;
+}
+
+.products-container > div.lastDiv {
+  border-top: 1px solid #767479;
+  border-bottom: 1px solid #767479;
+  padding: 20px;
+  color: #242127;
+}
+
+.products-container > div.firstDiv p span {
+  margin-right: 10px;
+}
+
+.products-container > div.firstDiv p span.lastDiv,
+.products-container > div.secondDiv {
+  color: #242127;
+}
+
+.products-container > div.thirdDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.products-container > div.thirdDiv p {
+  padding: 10px 20px;
+  color: #767479;
+  cursor: pointer;
+  font-size: 16px;
+  border-bottom: 2px solid #fff;
+  transition: all 0.3s;
+}
+
+.products-container > div.thirdDiv p.active {
+  border-bottom: 2px solid #9137ce;
+  color: #242127;
+  transition: all 0.3s;
+}
+
+.products-container > div.lastDiv p {
+  margin: auto;
+  cursor: pointer;
+  width: max-content;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-gap: 50px;
+  justify-content: space-between;
+}
+
+.products-container .titleDiv {
+  color: #635b69;
+  font-size: 48px;
+  font-weight: 500;
+}
+
+/* media queries */
+
+@media screen and (max-width: 1000px) {
+  .card-container {
+    grid-template-columns: auto auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card-container {
+    grid-template-columns: auto;
+  }
+}
