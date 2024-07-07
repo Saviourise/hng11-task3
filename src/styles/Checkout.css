@@ -273,6 +273,10 @@ div.big-line {
 /* media queries */
 
 @media screen and (max-width: 1000px) {
+  .checkout-container {
+    margin-top: 16vh;
+  }
+
   .checkout-container .checkout-header {
     padding: 0 50px;
   }
