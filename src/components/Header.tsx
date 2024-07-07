@@ -3,7 +3,7 @@ import "../styles/Header.css";
 import logo from "../assets/images/logo.png";
 import { IoIosSearch } from "react-icons/io";
 import { IoFilterOutline } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { PageContext } from "../context/PageContextProvider";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaBars } from "react-icons/fa6";
@@ -11,6 +11,13 @@ import { MdCancel } from "react-icons/md";
 
 const Header = () => {
   const { cartItems } = React.useContext(PageContext);
+
+  // detect route change and close side nav every time the route changes
+  const location = useLocation();
+
+  React.useEffect(() => {
+    closeSideNav();
+  }, [location]);
 
   const closeSideNav = () => {
     const sideNav: any = document.getElementById("mobile-header");
@@ -79,7 +86,6 @@ const Header = () => {
           Contact Us
         </Link>
         <Link to={"/cart"} className="link">
-          <span>{cartItems}</span>
           Cart
         </Link>
       </div>

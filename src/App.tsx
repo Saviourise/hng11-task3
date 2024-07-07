@@ -10,45 +10,10 @@ import PageContextProvider from "./context/PageContextProvider";
 import Cart from "./pages/Cart";
 import ScrollToTop from "./helpers/scrollToTop";
 import Checkout from "./pages/Checkout";
-
-interface Product {
-  category: string;
-  description: string;
-  id: string | number;
-  image: string;
-  price: number;
-  rating: {
-    count: number;
-    rate: number;
-  };
-  title: string;
-}
+import products from "./helpers/products.json";
+import Footer from "./components/Footer";
 
 function App() {
-  const [products, setProducts] = React.useState<Array<Product> | null>(null);
-
-  React.useEffect(() => {
-    const getProducts = localStorage.getItem("products");
-
-    if (getProducts) {
-      setProducts(JSON.parse(getProducts));
-      return;
-    }
-
-    fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-        localStorage.setItem("products", JSON.stringify(data));
-        console.log(data);
-      })
-      .catch((err) => {
-        setProducts([]);
-      });
-
-    return;
-  }, []);
-
   return (
     <PageContextProvider>
       <Router>
@@ -68,6 +33,7 @@ function App() {
 
           <Route path="*" element={<h1>404 Page Not Found</h1>} />
         </Routes>
+        <Footer />
       </Router>
     </PageContextProvider>
   );

@@ -1,0 +1,23 @@
+.footer-container {
+  width: 100%;
+  padding: 50px 100px;
+  background-color: #712ba0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-container img {
+  width: 90px;
+  height: auto;
+}
+
+.footer-container .section1 {
+  color: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+  .footer-container {
+    padding: 20px;
+  }
+}

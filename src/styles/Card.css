@@ -14,7 +14,7 @@
 }
 
 .card img {
-  width: 355px;
+  width: 100%;
   border-radius: 8px 8px 0 0;
   height: 302px;
   object-fit: cover;
@@ -63,7 +63,7 @@
 }
 
 .card .card-content .description {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 400;
   color: #827789;
   display: -webkit-box;
@@ -124,4 +124,58 @@
 .card .card-content .add-to-cart:hover {
   background-color: #fff;
   color: #9137ce;
+}
+
+@media screen and (max-width: 1000px) {
+  .card .card-content .add-to-cart {
+    height: 44px;
+    padding: 0 10px;
+    font-size: 12px;
+    border-radius: 8px;
+    gap: 5px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card-inner-container {
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .card .card-content .title {
+    font-size: 16px;
+  }
+
+  .card .card-content .title > span:last-child {
+    font-size: 6px;
+    padding: 5px;
+  }
+
+  .card img {
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    height: 156px;
+    object-fit: cover;
+  }
+
+  .card .card-content .price,
+  .card .card-content .description {
+    font-size: 12px;
+  }
+
+  .card .card-content .description {
+    margin-bottom: 10px;
+  }
+
+  .card .card-content {
+    padding: 10px;
+  }
+
+  .card .card-content .rating {
+    gap: 2px;
+  }
 }

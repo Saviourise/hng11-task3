@@ -22,19 +22,27 @@ const Products = ({
     <div className="products-container">
       {title && <div className="titleDiv">{title}</div>}
       {!title && (
-        <div className="firstDiv">
-          <p>
-            <span>Home</span>
-            <span>/</span>
-            <span>Fashion</span>
-            <span>/</span>
-            <span>Wedding</span>
-            <span>/</span>
-            <span>Gowns</span>
-          </p>
+        <>
+          <div className="firstDiv desktop">
+            <p>
+              <span>Home</span>
+              <span>/</span>
+              <span>Fashion</span>
+              <span>/</span>
+              <span>Wedding</span>
+              <span>/</span>
+              <span>Gowns</span>
+            </p>
 
-          <p>1 -18 of 200 results</p>
-        </div>
+            <p>1 -18 of 200 results</p>
+          </div>
+
+          <div className="firstDiv mobile">
+            <p>Product</p>
+
+            <p>Filter</p>
+          </div>
+        </>
       )}
       {!title && <div className="secondDiv">Wedding Wears</div>}
       {!title && (
@@ -65,9 +73,17 @@ const Products = ({
           </p>
         </div>
       )}
-      <div className="card-container">
+      <div className="card-container desktop">
         {products
           .slice(startNumOfproducts || 0, numOfproducts || products.length)
+          .map((product: any) => {
+            return <Card key={product.id} product={product} />;
+          })}
+      </div>
+
+      <div className="card-container mobile">
+        {products
+          .slice(startNumOfproducts || 0, numOfproducts - 1 || products.length)
           .map((product: any) => {
             return <Card key={product.id} product={product} />;
           })}

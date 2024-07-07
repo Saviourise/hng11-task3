@@ -126,3 +126,51 @@
   color: #fff;
   border: 1px solid #9137ce;
 }
+
+@media screen and (max-width: 700px) {
+  .empty-cart {
+    height: 40vh;
+    margin-top: 13vh;
+    gap: 20px;
+  }
+
+  .empty-cart h1 {
+    font-size: 12px;
+  }
+
+  .empty-cart div {
+    width: 30px;
+    height: 30px;
+  }
+
+  .empty-cart .button {
+    padding: 10px 20px;
+    font-size: 8px;
+  }
+
+  .cart-items {
+    padding: 20px;
+    margin-top: 13vh;
+    gap: 20px;
+  }
+
+  .cart-line {
+    width: 148px;
+  }
+
+  .buttons .button {
+    padding: 13px 0;
+    width: 140px;
+    font-size: 12px;
+  }
+
+  .buttons .button:hover {
+    transform: scale(1.05);
+  }
+
+  .buttons .button:last-child {
+    background-color: #9137ce;
+    color: #fff;
+    border: 1px solid #9137ce;
+  }
+}

@@ -58,7 +58,7 @@
   border: 1px solid #9ea2aa;
   outline: none;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 16px;
   width: 70%;
   padding: 15px;
 }
@@ -79,7 +79,7 @@
   .checkout-promo-code
   .button {
   padding: 15px 40px;
-  border-radius: 5px;
+  border-radius: 16px;
   color: #9137ce;
   display: flex;
   align-items: center;
@@ -156,7 +156,7 @@
   width: 100%;
   padding: 12px;
   height: 56px;
-  border-radius: 28px;
+  border-radius: 8px;
   border: 1px solid #767479;
   outline: none;
 }
@@ -274,7 +274,7 @@ div.big-line {
 
 @media screen and (max-width: 1000px) {
   .checkout-container {
-    margin-top: 16vh;
+    margin-top: 13vh;
   }
 
   .checkout-container .checkout-header {

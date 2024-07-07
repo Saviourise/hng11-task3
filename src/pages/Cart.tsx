@@ -23,7 +23,8 @@ const Cart = ({ products }: any) => {
       {cart.length === 0 ? (
         <div className="empty-cart">
           <div>
-            <FaTimes size={80} color="#B263E8" />
+            <FaTimes size={80} color="#B263E8" className="desktop" />
+            <FaTimes size={20} color="#B263E8" className="mobile" />
           </div>
           <h1>Your cart is empty</h1>
           <Link to={"/"} className="button">

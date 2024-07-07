@@ -102,22 +102,38 @@ const Card = ({ product }: any) => {
             <IoIosHeartEmpty color="red" />
           )}
         </div>
-        <img src={product.image} alt="Product" />
+        <img src={require("../assets/images/" + product.image)} alt="Product" />
         <div className="card-content">
           <p className="flex title">
             <span>{product.title}</span>
             <span>-{Math.floor(product.rating.count / 10)}%</span>
           </p>
-          <p className="price">₦{product.price}</p>
+          <p className="price">
+            ₦{product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+          </p>
           <p className="description">{product.description}</p>
           <p className="flex">
-            <span className="rating">
+            <span className="rating desktop">
               {[...Array(Math.floor(product.rating.rate))].map((_page, i) => {
-                return <FaStar color="#FFAC33" key={i} />;
+                return (
+                  <FaStar
+                    color="#FFAC33"
+                    key={i}
+                    size={15}
+                    className="desktop"
+                  />
+                );
               })}
               {[...Array(5 - Math.floor(product.rating.rate))].map(
                 (_page, i) => {
-                  return <CiStar color="#FFAC33" key={i} />;
+                  return (
+                    <CiStar
+                      color="#FFAC33"
+                      key={i}
+                      size={15}
+                      className="desktop"
+                    />
+                  );
                 }
               )}
             </span>
@@ -128,7 +144,8 @@ const Card = ({ product }: any) => {
               }}
               ref={cartBtn}
             >
-              <IoCartOutline size={20} />
+              <IoCartOutline size={20} className="desktop" />
+              <IoCartOutline size={15} className="mobile" />
               <span>
                 {!checkcart(product) ? "Add to Cart" : "Remove from Cart"}
               </span>

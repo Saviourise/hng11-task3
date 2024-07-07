@@ -13,10 +13,10 @@ const CheckoutCard = ({ item }: any) => {
             <span>+</span>
           </div>
         </div>
-        <p>₦{item.price}</p>
+        <p>₦{item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
       </div>
 
-      <img src={item.image} alt={item.title} />
+      <img src={require("../assets/images/" + item.image)} alt={item.title} />
     </div>
   );
 };

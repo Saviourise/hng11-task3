@@ -43,5 +43,28 @@
 .hero-container p {
   font-size: 28px;
   font-style: italic;
-  width: 600px;
+  width: 60%;
+}
+
+@media screen and (max-width: 1000px) {
+  .hero-container {
+    padding: 0 20px;
+    gap: 20px;
+    height: 60vh;
+  }
+
+  .hero-container .button {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+
+  .hero-container h1 {
+    font-size: 24px;
+    width: 60%;
+  }
+
+  .hero-container p {
+    font-size: 16px;
+    width: 60%;
+  }
 }

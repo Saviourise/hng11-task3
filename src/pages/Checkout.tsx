@@ -27,8 +27,8 @@ const Checkout = () => {
       <div className="checkout-inner-container">
         <div className="checkout-card-container">
           <h1>Order Summary</h1>
-          {cart.map((item: any) => {
-            return <CheckoutCard item={item} />;
+          {cart.map((item: any, index: number) => {
+            return <CheckoutCard item={item} key={index} />;
           })}
 
           <div className="checkout-promo-code">
@@ -43,11 +43,17 @@ const Checkout = () => {
           <div className="subtotal-container">
             <div>
               <p>Sub-total</p>
-              <p>₦{total.toFixed(2)}</p>
+              <p>
+                ₦
+                {total
+                  .toFixed(2)
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+              </p>
             </div>
             <div>
               <p>Delivery</p>
-              <p>₦5.00</p>
+              <p>₦5,000</p>
             </div>
           </div>
 
@@ -55,7 +61,13 @@ const Checkout = () => {
 
           <div className="total-container">
             <p>Total</p>
-            <p>₦{total.toFixed(2)}</p>
+            <p>
+              ₦
+              {total
+                .toFixed(2)
+                .toString()
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+            </p>
           </div>
         </div>
 

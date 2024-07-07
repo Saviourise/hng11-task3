@@ -45,16 +45,29 @@ const CartCard = ({ item }: any) => {
           <p>{item.description}</p>
         </div>
 
-        <div>₦{item.price}</div>
+        <div>
+          ₦{item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+        </div>
 
         <div>
-          <p>Total: ₦{(total * item.price).toFixed(2)}</p>
+          <p>
+            Total: ₦
+            {(total * item.price)
+              .toFixed(2)
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+          </p>
           <div onClick={removeItem}>
-            <RiDeleteBin6Line size={25} color="#9137CE" />
+            <RiDeleteBin6Line size={25} color="#9137CE" className="desktop" />
+            <RiDeleteBin6Line size={15} color="#9137CE" className="mobile" />
           </div>
         </div>
       </div>
-      <img className="cart-img" alt="cart" src={item.image} />
+      <img
+        className="cart-img"
+        alt="cart"
+        src={require("../assets/images/" + item.image)}
+      />
     </div>
   );
 };
