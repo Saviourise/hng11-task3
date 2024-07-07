@@ -12,12 +12,33 @@
   height: auto;
 }
 
-.footer-container .section1 {
+.footer-container > div {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+.footer-container > div .section1,
+.footer-container > div .section2 {
   color: #fff;
+  display: flex;
+  gap: 20px;
+}
+
+.footer-container > div .section1 > *,
+.footer-container > div .section2 > * {
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1000px) {
   .footer-container {
     padding: 20px;
+  }
+
+  .footer-container > div .section1,
+  .footer-container > div {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
