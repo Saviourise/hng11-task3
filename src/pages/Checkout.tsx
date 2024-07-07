@@ -11,7 +11,7 @@ const Checkout = () => {
     JSON.parse(localStorage.getItem("cart") || "[]")
   );
 
-  const [total, setTotal] = React.useState(
+  const [total] = React.useState(
     JSON.parse(localStorage.getItem("cart") || "[]").reduce(
       (acc: any, item: any) => acc + item.price,
       0
