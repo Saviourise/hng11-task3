@@ -66,7 +66,9 @@ const Header = () => {
             Contact Us
           </Link>
           <Link to={"/cart"} className="link">
-            <span>{cartItems}</span>
+            <span className="cart-number" style={{ right: -15 }}>
+              {cartItems}
+            </span>
             Cart
           </Link>
         </div>
