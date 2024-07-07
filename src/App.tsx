@@ -9,6 +9,7 @@ import Header from "./components/Header";
 import PageContextProvider from "./context/PageContextProvider";
 import Cart from "./pages/Cart";
 import ScrollToTop from "./helpers/scrollToTop";
+import Checkout from "./pages/Checkout";
 
 interface Product {
   category: string;
@@ -63,6 +64,7 @@ function App() {
             path="/cart"
             element={products ? <Cart products={products} /> : <Loader />}
           />
+          <Route path="/checkout" element={<Checkout />} />
 
           <Route path="*" element={<h1>404 Page Not Found</h1>} />
         </Routes>

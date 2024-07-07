@@ -16,7 +16,6 @@ const Cart = ({ products }: any) => {
 
   React.useEffect(() => {
     setCart(JSON.parse(localStorage.getItem("cart") || "[]"));
-    // products = JSON.parse(localStorage.getItem("products") || "[]");
   }, [cartItems]);
 
   return (
