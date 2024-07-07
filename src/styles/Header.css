@@ -29,7 +29,7 @@
   justify-content: center;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
-  transform: translateX(0%);
+  transform: translateX(-100%);
 }
 
 .mobile-header .cancel-btn {
