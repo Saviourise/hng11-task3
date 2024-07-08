@@ -44,6 +44,7 @@ const Header = () => {
 
         <div className="phone cart-icon">
           <Link to={"/cart"} className="link">
+            <span className="cart-number">{cartItems}</span>
             <MdOutlineShoppingCart color="#9137CE" size={25} />
           </Link>
         </div>
