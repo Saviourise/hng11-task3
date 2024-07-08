@@ -8,6 +8,7 @@ import { PageContext } from "../context/PageContextProvider";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { FaBars } from "react-icons/fa6";
 import { MdCancel } from "react-icons/md";
+import { HashLink } from "react-router-hash-link";
 
 const Header = () => {
   const { cartItems } = React.useContext(PageContext);
@@ -62,9 +63,9 @@ const Header = () => {
           <Link to={"/"} className="link">
             Products
           </Link>
-          <Link to={"/"} className="link">
+          <HashLink to={"/#newsletter-container"} className="link">
             Contact Us
-          </Link>
+          </HashLink>
           <Link to={"/cart"} className="link">
             <span className="cart-number" style={{ right: -15 }}>
               {cartItems}
@@ -84,9 +85,9 @@ const Header = () => {
         <Link to={"/"} className="link">
           Products
         </Link>
-        <Link to={"/"} className="link">
+        <HashLink to={"/#newsletter-container"} className="link">
           Contact Us
-        </Link>
+        </HashLink>
         <Link to={"/cart"} className="link">
           Cart
         </Link>

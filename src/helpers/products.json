@@ -6,7 +6,7 @@
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg1.png",
     "rating": {
-      "rate": 5,
+      "rate": 4,
       "count": 120
     }
   },
@@ -22,13 +22,13 @@
     }
   },
   {
-    "title": "Silver Sandalsn",
+    "title": "Silver Sandals",
     "id": 3,
     "price": 50000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg3.png",
     "rating": {
-      "rate": 5,
+      "rate": 3,
       "count": 120
     }
   },
@@ -55,20 +55,20 @@
     }
   },
   {
-    "title": "Rosy Gown",
+    "title": "Sleek heels",
     "id": 6,
-    "price": 50000,
+    "price": 65000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg6.png",
     "rating": {
-      "rate": 5,
+      "rate": 3,
       "count": 120
     }
   },
   {
-    "title": "Rosy Gown",
+    "title": "Juicy Gown",
     "id": 7,
-    "price": 180000,
+    "price": 200000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg7.png",
     "rating": {
@@ -77,20 +77,20 @@
     }
   },
   {
-    "title": "Rosy Gown",
+    "title": "White Heel",
     "id": 8,
-    "price": 25000,
+    "price": 40000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg8.png",
     "rating": {
-      "rate": 5,
+      "rate": 2,
       "count": 120
     }
   },
   {
-    "title": "Rosy Gown",
+    "title": "Sparkling Heel",
     "id": 9,
-    "price": 50000,
+    "price": 70000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg9.png",
     "rating": {
@@ -101,18 +101,18 @@
   {
     "title": "Rosy Gown",
     "id": 10,
-    "price": 180000,
+    "price": 160000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg10.png",
     "rating": {
-      "rate": 5,
+      "rate": 2,
       "count": 120
     }
   },
   {
-    "title": "Rosy Gown",
+    "title": "Gold Ring",
     "id": 11,
-    "price": 25000,
+    "price": 120000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg11.png",
     "rating": {
@@ -121,9 +121,9 @@
     }
   },
   {
-    "title": "Rosy Gown",
+    "title": "Shining Tiara",
     "id": 12,
-    "price": 50000,
+    "price": 40000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg12.png",
     "rating": {
@@ -132,7 +132,7 @@
     }
   },
   {
-    "title": "Rosy Gown",
+    "title": "Silver Wedding Ring",
     "id": 13,
     "price": 180000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
@@ -143,20 +143,20 @@
     }
   },
   {
-    "title": "Rosy Gown",
+    "title": "Rosy veil",
     "id": 14,
     "price": 25000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg14.png",
     "rating": {
-      "rate": 5,
+      "rate": 2,
       "count": 120
     }
   },
   {
-    "title": "Rosy Gown",
+    "title": "Flora frame",
     "id": 15,
-    "price": 5000,
+    "price": 15000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg15.png",
     "rating": {
@@ -165,29 +165,29 @@
     }
   },
   {
-    "title": "Rosy Gown",
+    "title": "Gold Ear wear",
     "id": 16,
-    "price": 180000,
+    "price": 30000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg16.png",
     "rating": {
-      "rate": 5,
+      "rate": 3,
       "count": 120
     }
   },
   {
-    "title": "Rosy Gown",
+    "title": "Set of Jewries",
     "id": 17,
-    "price": 25000,
+    "price": 195000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
     "image": "proimg17.png",
     "rating": {
-      "rate": 5,
+      "rate": 2,
       "count": 120
     }
   },
   {
-    "title": "Rosy Gown",
+    "title": "Silver Heels",
     "id": 18,
     "price": 50000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
