@@ -1,5 +1,5 @@
 .checkout-container {
-  margin-top: 12vh;
+  margin-top: 85px;
   width: 100%;
 }
 
@@ -274,7 +274,7 @@ div.big-line {
 
 @media screen and (max-width: 1000px) {
   .checkout-container {
-    margin-top: 13vh;
+    margin-top: 100px;
   }
 
   .checkout-container .checkout-header {

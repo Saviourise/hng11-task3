@@ -1,7 +1,7 @@
 .empty-cart {
   background-color: #f5ecfc;
   height: 90vh;
-  margin-top: 10vh;
+  margin-top: 70px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -56,7 +56,7 @@
 .cart-items {
   background-color: #f5ecfc;
   padding: 50px 100px;
-  margin-top: 10vh;
+  margin-top: 70px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -136,7 +136,7 @@
 @media screen and (max-width: 700px) {
   .empty-cart {
     height: 40vh;
-    margin-top: 13vh;
+    margin-top: 100px;
     gap: 20px;
   }
 
@@ -156,7 +156,7 @@
 
   .cart-items {
     padding: 20px;
-    margin-top: 13vh;
+    margin-top: 100px;
     gap: 20px;
   }
 
