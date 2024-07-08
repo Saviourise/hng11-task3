@@ -33,14 +33,10 @@ const Products = ({
               <span>/</span>
               <span>Gowns</span>
             </p>
-
-            <p>1 -18 of 200 results</p>
           </div>
 
           <div className="firstDiv mobile">
-            <p>Product</p>
-
-            <p>Filter</p>
+            <p>Wedding Wear</p>
           </div>
         </>
       )}
@@ -88,11 +84,6 @@ const Products = ({
             return <Card key={product.id} product={product} />;
           })}
       </div>
-      {!title && (
-        <div className="lastDiv">
-          <p>Load More</p>
-        </div>
-      )}
     </div>
   );
 };

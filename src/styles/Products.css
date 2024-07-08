@@ -12,24 +12,15 @@
 }
 
 .products-container > div.firstDiv p,
-.products-container > div.secondDiv,
-.products-container > div.lastDiv {
+.products-container > div.secondDiv {
   font-size: 28px;
   color: #767479;
-}
-
-.products-container > div.lastDiv {
-  border-top: 1px solid #767479;
-  border-bottom: 1px solid #767479;
-  padding: 20px;
-  color: #242127;
 }
 
 .products-container > div.firstDiv p span {
   margin-right: 10px;
 }
 
-.products-container > div.firstDiv p span.lastDiv,
 .products-container > div.secondDiv {
   color: #242127;
 }
@@ -54,12 +45,6 @@
   border-bottom: 2px solid #9137ce;
   color: #242127;
   transition: all 0.3s;
-}
-
-.products-container > div.lastDiv p {
-  margin: auto;
-  cursor: pointer;
-  width: max-content;
 }
 
 .card-container {
@@ -117,11 +102,6 @@
     gap: 20px;
   }
 
-  .products-container > div.lastDiv {
-    padding: 20px;
-    font-size: 14px;
-  }
-
   .secondDiv {
     display: none !important;
   }
@@ -156,5 +136,9 @@
 
   .mobile {
     display: flex !important;
+  }
+
+  .products-container > div.firstDiv p {
+    font-size: 24px;
   }
 }
