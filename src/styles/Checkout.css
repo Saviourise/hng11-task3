@@ -187,8 +187,8 @@
 }
 
 .checkout-form-container .save-btn span:hover {
-  background-color: #9137ce;
-  color: #fff;
+  border-color: #b263e8;
+  color: #b263e8;
 }
 
 .checkout-form-container > .input-div .cvv {
@@ -260,7 +260,7 @@
 }
 
 .checkout-form-container .pay-btn span:hover {
-  transform: scale(1.05);
+  background-color: #b263e8;
 }
 
 div.big-line {

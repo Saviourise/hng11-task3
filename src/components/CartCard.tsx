@@ -4,7 +4,7 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { PageContext } from "../context/PageContextProvider";
 
 const CartCard = ({ item }: any) => {
-  const [total, setTotal] = React.useState(1);
+  const [total, setTotal] = React.useState(item.quantity);
   const { setCartItems } = React.useContext(PageContext);
 
   const removeItem = () => {
@@ -15,6 +15,21 @@ const CartCard = ({ item }: any) => {
     setCartItems(newCart.length);
     setTotal(1);
   };
+
+  React.useEffect(() => {
+    const cartItems = localStorage.getItem("cart" || "[]");
+    if (cartItems) {
+      const parsedCart = JSON.parse(cartItems);
+
+      // find the item in parsedcart and set the quantity to the total
+      if (parsedCart) {
+        const newCart = parsedCart.map((cartItem: any) =>
+          cartItem.id === item.id ? { ...cartItem, quantity: total } : cartItem
+        );
+        localStorage.setItem("cart", JSON.stringify(newCart));
+      }
+    }
+  }, [total, item]);
 
   return (
     <div className="cart-item">

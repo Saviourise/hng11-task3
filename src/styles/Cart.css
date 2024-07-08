@@ -42,8 +42,8 @@
 }
 
 .empty-cart .button:hover {
-  background-color: #9137ce;
-  color: #fff;
+  border-color: #b263e8;
+  color: #b263e8;
 }
 
 .line {
@@ -118,13 +118,19 @@
 }
 
 .buttons .button:hover {
-  transform: scale(1.05);
+  border-color: #b263e8;
+  color: #b263e8;
 }
 
 .buttons .button:last-child {
   background-color: #9137ce;
   color: #fff;
   border: 1px solid #9137ce;
+}
+
+.buttons .button:last-child:hover {
+  background-color: #b263e8;
+  border-color: #b263e8;
 }
 
 @media screen and (max-width: 700px) {

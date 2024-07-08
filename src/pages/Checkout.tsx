@@ -11,9 +11,9 @@ const Checkout = () => {
     JSON.parse(localStorage.getItem("cart") || "[]")
   );
 
-  const [total] = React.useState(
+  const [total, setTotal] = React.useState(
     JSON.parse(localStorage.getItem("cart") || "[]").reduce(
-      (acc: any, item: any) => acc + item.price,
+      (acc: any, item: any) => acc + item.price * item.quantity,
       0
     )
   );
@@ -28,7 +28,9 @@ const Checkout = () => {
         <div className="checkout-card-container">
           <h1>Order Summary</h1>
           {cart.map((item: any, index: number) => {
-            return <CheckoutCard item={item} key={index} />;
+            return (
+              <CheckoutCard setTotalPrice={setTotal} item={item} key={index} />
+            );
           })}
 
           <div className="checkout-promo-code">
@@ -63,7 +65,7 @@ const Checkout = () => {
             <p>Total</p>
             <p>
               ₦
-              {total
+              {(total + 5000)
                 .toFixed(2)
                 .toString()
                 .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}

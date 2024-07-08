@@ -123,8 +123,7 @@
 }
 
 .card .card-content .add-to-cart:hover {
-  background-color: #fff;
-  color: #9137ce;
+  background-color: #b263e8;
 }
 
 @media screen and (max-width: 1000px) {

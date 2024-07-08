@@ -15,24 +15,24 @@
 
 .mobile-header {
   position: fixed;
-  top: 0;
+  top: 10vh;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 50vh;
   background-color: #fff;
-  z-index: 999999999999999;
-  padding: 50px 100px;
+  z-index: 999999999;
+  padding: 50px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
-  align-items: center;
+  gap: 20px;
+  align-items: flex-start;
   justify-content: center;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
-  transform: translateX(-100%);
+  transform: translateY(-100%);
 }
 
-.mobile-header .cancel-btn {
+.cancel-btn {
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s;
@@ -108,6 +108,14 @@
   color: #000;
 }
 
+.mobile-header .link {
+  font-size: 16px;
+  color: #5b595f;
+  border-bottom: 1px solid #d7c5e3;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
 @media screen and (max-width: 1000px) {
   .header-container {
     padding: 16px 50px;
@@ -157,5 +165,9 @@
 @media screen and (max-width: 600px) {
   .header-container {
     padding: 16px 20px;
+  }
+
+  .mobile-header {
+    padding: 50px 20px;
   }
 }

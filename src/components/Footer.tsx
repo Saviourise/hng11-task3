@@ -5,11 +5,14 @@ import { SlSocialFacebook } from "react-icons/sl";
 import { HiOutlineMail } from "react-icons/hi";
 import { FaInstagram } from "react-icons/fa6";
 import { FaSnapchat } from "react-icons/fa6";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <div className="footer-container">
-      <img src={logo_white} alt="logo" />
+      <Link to={"/"}>
+        <img src={logo_white} alt="logo" />
+      </Link>
 
       <div>
         <div className="section1">

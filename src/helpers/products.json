@@ -4,6 +4,7 @@
     "id": 1,
     "price": 180000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg1.png",
     "rating": {
       "rate": 4,
@@ -15,6 +16,7 @@
     "id": 2,
     "price": 25000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg2.png",
     "rating": {
       "rate": 5,
@@ -26,6 +28,7 @@
     "id": 3,
     "price": 50000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg3.png",
     "rating": {
       "rate": 3,
@@ -37,6 +40,7 @@
     "id": 4,
     "price": 180000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg4.png",
     "rating": {
       "rate": 5,
@@ -48,6 +52,7 @@
     "id": 5,
     "price": 25000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg5.png",
     "rating": {
       "rate": 5,
@@ -59,6 +64,7 @@
     "id": 6,
     "price": 65000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg6.png",
     "rating": {
       "rate": 3,
@@ -70,6 +76,7 @@
     "id": 7,
     "price": 200000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg7.png",
     "rating": {
       "rate": 5,
@@ -81,6 +88,7 @@
     "id": 8,
     "price": 40000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg8.png",
     "rating": {
       "rate": 2,
@@ -92,6 +100,7 @@
     "id": 9,
     "price": 70000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg9.png",
     "rating": {
       "rate": 5,
@@ -103,6 +112,7 @@
     "id": 10,
     "price": 160000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg10.png",
     "rating": {
       "rate": 2,
@@ -114,6 +124,7 @@
     "id": 11,
     "price": 120000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg11.png",
     "rating": {
       "rate": 5,
@@ -125,6 +136,7 @@
     "id": 12,
     "price": 40000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg12.png",
     "rating": {
       "rate": 5,
@@ -136,6 +148,7 @@
     "id": 13,
     "price": 180000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg13.png",
     "rating": {
       "rate": 5,
@@ -147,6 +160,7 @@
     "id": 14,
     "price": 25000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg14.png",
     "rating": {
       "rate": 2,
@@ -158,6 +172,7 @@
     "id": 15,
     "price": 15000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg15.png",
     "rating": {
       "rate": 5,
@@ -169,6 +184,7 @@
     "id": 16,
     "price": 30000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg16.png",
     "rating": {
       "rate": 3,
@@ -180,6 +196,7 @@
     "id": 17,
     "price": 195000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg17.png",
     "rating": {
       "rate": 2,
@@ -191,6 +208,7 @@
     "id": 18,
     "price": 50000,
     "description": "A ball dress with sparking lace placement on short tulle skirt.",
+    "quantity": 1,
     "image": "proimg18.png",
     "rating": {
       "rate": 5,
