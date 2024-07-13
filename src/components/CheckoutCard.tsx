@@ -82,7 +82,7 @@ const CheckoutCard = ({ setTotalPrice, item }: any) => {
         </Link>
       </div>
 
-      <Link to={`/product/${item.id}`}>
+      <Link to={`/product/${item.id}`} className="checkout-image">
         <img
           src={`https://api.timbu.cloud/images/${item.photos[0].url}`}
           alt={item.title}

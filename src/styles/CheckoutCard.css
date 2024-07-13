@@ -9,6 +9,10 @@
   text-decoration: none;
 }
 
+.checkout-card a.checkout-image {
+  width: 30%;
+}
+
 .checkout-card img {
   height: 100%;
   width: 100%;
@@ -83,7 +87,7 @@
   font-size: 12px;
 }
 
-.checkout-card > .checkout-content > p {
+.checkout-card > .checkout-content > a p {
   color: #827789;
   font-size: 16px;
 }
@@ -102,7 +106,7 @@
     border-radius: 8px;
   }
 
-  .checkout-card > .checkout-content > p {
+  .checkout-card > .checkout-content > a p {
     font-size: 12px;
   }
 }
