@@ -10,7 +10,7 @@ import "swiper/css/free-mode";
 import "swiper/css/navigation";
 import "swiper/css/thumbs";
 
-import { FreeMode, Navigation, Thumbs, Autoplay } from "swiper/modules";
+import { FreeMode, Navigation, Thumbs, Autoplay } from "swiper";
 import { FaStar } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
 import Products from "../components/Products";
