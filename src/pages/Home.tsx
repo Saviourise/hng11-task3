@@ -4,11 +4,11 @@ import Hero from "../components/Hero";
 import Products from "../components/Products";
 import Newsletter from "../components/Newsletter";
 
-const Home = ({ products }: any) => {
+const Home = () => {
   return (
     <>
       <Hero />
-      <Products products={products} />
+      <Products />
       <Newsletter />
     </>
   );

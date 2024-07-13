@@ -5,9 +5,13 @@
   width: 100%;
 }
 
+.checkout-card a {
+  text-decoration: none;
+}
+
 .checkout-card img {
   height: 100%;
-  width: 30%;
+  width: 100%;
   object-fit: cover;
   border-radius: 8px;
 }

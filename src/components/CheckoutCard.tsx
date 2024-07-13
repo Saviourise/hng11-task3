@@ -1,27 +1,37 @@
 import React from "react";
 import "../styles/CheckoutCard.css";
+import { PageContext } from "../context/PageContextProvider";
+import { Link } from "react-router-dom";
 
 const CheckoutCard = ({ setTotalPrice, item }: any) => {
   const [total, setTotal] = React.useState(item.quantity);
+  const { cartItems, setCartItems } = React.useContext(PageContext);
+
+  const getItemPrice = (item: any) => {
+    // check if variable is an array
+    if (Array.isArray(item.current_price)) {
+      return item.current_price[0].NGN[0];
+    } else {
+      return item.current_price;
+    }
+  };
 
   React.useEffect(() => {
-    const cartItemsStorage = localStorage.getItem("cart" || "[]");
-    if (cartItemsStorage) {
-      const parsedCart = JSON.parse(cartItemsStorage);
-      if (parsedCart) {
-        const newCart = parsedCart.map((cartItem: any) =>
-          cartItem.id === item.id ? { ...cartItem, quantity: total } : cartItem
-        );
-        localStorage.setItem("cart", JSON.stringify(newCart));
-      }
+    if (cartItems.length) {
+      const newCart = cartItems.map((cartItem: any) =>
+        cartItem.id === item.id ? { ...cartItem, quantity: total } : cartItem
+      );
+      setCartItems(newCart);
     }
 
     setTotalPrice(
-      JSON.parse(localStorage.getItem("cart") || "[]").reduce(
-        (acc: any, item: any) => acc + item.price * item.quantity,
+      cartItems.reduce(
+        (acc: any, item: any) => acc + getItemPrice(item) * item.quantity,
         0
       )
     );
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [total, setTotalPrice, item]);
 
   if (!item) {
@@ -40,7 +50,9 @@ const CheckoutCard = ({ setTotalPrice, item }: any) => {
     <div className="checkout-card">
       <div className="checkout-content">
         <div>
-          <h2>{item.title}</h2>
+          <Link to={`/product/${item.id}`}>
+            <h2>{item.name}</h2>
+          </Link>
           <div>
             <span
               onClick={() => {
@@ -60,10 +72,22 @@ const CheckoutCard = ({ setTotalPrice, item }: any) => {
             </span>
           </div>
         </div>
-        <p>₦{item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</p>
+        <Link to={`/product/${item.id}`}>
+          <p>
+            ₦
+            {getItemPrice(item)
+              .toString()
+              .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+          </p>
+        </Link>
       </div>
 
-      <img src={require("../assets/images/" + item.image)} alt={item.title} />
+      <Link to={`/product/${item.id}`}>
+        <img
+          src={`https://api.timbu.cloud/images/${item.photos[0].url}`}
+          alt={item.title}
+        />
+      </Link>
     </div>
   );
 };

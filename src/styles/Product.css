@@ -1,0 +1,231 @@
+.product-container {
+  padding: 50px 100px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.product-container > section:first-child {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  justify-content: space-between;
+}
+
+.product-container > section:first-child > div {
+  width: 50%;
+}
+
+.product-container > section:first-child > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.product-container > section:first-child > div:last-child .flex,
+.product-container > section:first-child > div:last-child .flex .ratings {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.product-container > section:first-child > div:last-child .flex .ratings {
+  gap: 5px;
+}
+
+.product-container > section:first-child > div:last-child .flex .price {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.product-container > section:first-child > div:last-child .flex .discount {
+  font-size: 15px;
+  font-weight: bold;
+  color: #aaa;
+  text-decoration: line-through;
+}
+
+.product-container .red {
+  color: #f00;
+}
+
+.product-container > section:first-child > div:last-child .flex .quantity {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  padding: 0 20px;
+  height: 45px;
+  border: 1px solid #aaa;
+}
+
+.product-container
+  > section:first-child
+  > div:last-child
+  .flex
+  .quantity
+  > span {
+  font-size: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.product-container
+  > section:first-child
+  > div:last-child
+  .flex
+  .quantity
+  > span:first-child,
+.product-container
+  > section:first-child
+  > div:last-child
+  .flex
+  .quantity
+  > span:last-child {
+  font-size: 20px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.product-container > section:first-child > div:last-child .flex .add-to-cart {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #9137ce;
+  color: #fff;
+  cursor: pointer;
+  height: 45px;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.product-container
+  > section:first-child
+  > div:last-child
+  .flex
+  .add-to-cart.disabled {
+  background-color: #aaa;
+  cursor: default;
+}
+
+.product-container
+  > section:first-child
+  > div:last-child
+  .flex
+  .add-to-cart.disabled:hover {
+  background-color: #aaa;
+}
+
+.product-container
+  > section:first-child
+  > div:last-child
+  .flex
+  .add-to-cart:hover {
+  background-color: #b263e8;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.mySwiper2 {
+  width: 100%;
+  height: 500px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 10px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.mySwiper {
+  height: 20%;
+  width: 50%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+
+.mySwiper .swiper-slide {
+  width: 20%;
+  height: 50px;
+  opacity: 0.4;
+  cursor: pointer;
+}
+
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  font-weight: bold;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 12px !important;
+  background-color: #333;
+  padding: 10px;
+}
+
+.swiper-free-mode > .swiper-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .product-container {
+    padding: 50px;
+  }
+
+  .product-container > section:first-child {
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product-container {
+    padding: 50px 20px;
+  }
+
+  .product-container > section:first-child {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .product-container > section:first-child > div {
+    width: 100%;
+  }
+
+  .mySwiper .swiper-slide {
+    margin-top: 20px;
+  }
+
+  .mySwiper {
+    width: 100%;
+  }
+
+  .product-container > section:first-child > div:last-child .flex .add-to-cart,
+  .product-container > section:first-child > div:last-child .flex .quantity {
+    width: 50%;
+    justify-content: center;
+  }
+
+  .product-container > section:first-child > div:last-child .flex .add-to-cart {
+    font-size: 12px;
+  }
+}

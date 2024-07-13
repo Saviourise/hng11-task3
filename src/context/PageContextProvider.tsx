@@ -1,14 +1,12 @@
 import React, { useState, createContext } from "react";
 
 export const PageContext = createContext({
-  cartItems: 0,
+  cartItems: [],
   setCartItems: null as any,
 });
 
 const PageContextProvider = (props: any) => {
-  const [cartItems, setCartItems] = useState(
-    JSON.parse(localStorage.getItem("cart") || "[]")?.length || 0
-  );
+  const [cartItems, setCartItems] = useState([]);
   return (
     <PageContext.Provider
       value={{

@@ -133,6 +133,11 @@
   border-color: #b263e8;
 }
 
+.buttons.mobile .button {
+  width: 300px;
+  max-width: 100%;
+}
+
 @media screen and (max-width: 700px) {
   .empty-cart {
     height: 40vh;

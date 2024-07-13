@@ -11,6 +11,16 @@
   border-radius: 8px;
   background-color: #f9f3fd;
   position: relative;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card-inner-container a {
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: scale(1.03);
 }
 
 .card img {
@@ -22,6 +32,12 @@
 
 .card .card-content {
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card .card-content a {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -97,6 +113,11 @@
   transition: all 0.3s ease-in-out;
 }
 
+.card .card-content .add-to-cart.disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
 .bounce {
   animation: bounce 0.1s infinite alternate;
   animation-iteration-count: 4;
@@ -124,6 +145,10 @@
 
 .card .card-content .add-to-cart:hover {
   background-color: #b263e8;
+}
+
+.card .card-content .add-to-cart.disabled:hover {
+  background-color: #aaa;
 }
 
 @media screen and (max-width: 1000px) {

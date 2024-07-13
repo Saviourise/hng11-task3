@@ -14,14 +14,17 @@
 .products-container > div.firstDiv p,
 .products-container > div.secondDiv {
   font-size: 28px;
+  text-transform: capitalize;
   color: #767479;
 }
 
 .products-container > div.firstDiv p span {
+  text-transform: capitalize;
   margin-right: 10px;
 }
 
 .products-container > div.secondDiv {
+  text-transform: capitalize;
   color: #242127;
 }
 
@@ -39,6 +42,7 @@
   font-size: 16px;
   border-bottom: 2px solid #fff;
   transition: all 0.3s;
+  text-transform: capitalize;
 }
 
 .products-container > div.thirdDiv p.active {
@@ -74,6 +78,56 @@
 
 .card-container.mobile {
   display: none !important;
+}
+
+.pagination-container {
+  column-gap: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination-container .button i {
+  pointer-events: none;
+}
+
+.pagination-container .button.disabled {
+  color: #b3b3b3;
+  pointer-events: none;
+}
+
+.pagination-container .button,
+.pagination-container .link {
+  height: 45px;
+  width: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #666666;
+  background-color: #f2f2f2;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.pagination-container .button:hover,
+.pagination-container .link:hover {
+  color: #fff;
+  background: #9137ce;
+}
+.pagination-container .button.active,
+.pagination-container .link.active {
+  color: #fff;
+  background: #9137ce;
+}
+
+.pagination-container .links {
+  column-gap: 12px;
+  display: flex;
+}
+
+.pagination-container .link {
+  font-weight: 500;
+  text-decoration: none;
 }
 
 /* media queries */
@@ -140,5 +194,17 @@
 
   .products-container > div.firstDiv p {
     font-size: 24px;
+  }
+
+  .pagination-container .button,
+  .pagination-container .link {
+    height: 30px;
+    width: 30px;
+    font-size: 12px;
+  }
+
+  .pagination-container,
+  .pagination-container .links {
+    column-gap: 8px;
   }
 }

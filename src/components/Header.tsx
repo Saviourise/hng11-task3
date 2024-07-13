@@ -44,7 +44,7 @@ const Header = () => {
 
         <div className="phone cart-icon">
           <Link to={"/cart"} className="link">
-            <span className="cart-number">{cartItems}</span>
+            <span className="cart-number">{cartItems.length}</span>
             <MdOutlineShoppingCart color="#9137CE" size={25} />
           </Link>
         </div>
@@ -70,15 +70,15 @@ const Header = () => {
         </div>
 
         <div className="icons">
-          <Link to={"/"} className="link">
+          <HashLink to={"/#products-container"} className="link">
             Products
-          </Link>
+          </HashLink>
           <HashLink to={"/#newsletter-container"} className="link">
             Contact Us
           </HashLink>
           <Link to={"/cart"} className="link">
             <span className="cart-number" style={{ right: -15 }}>
-              {cartItems}
+              {cartItems.length}
             </span>
             Cart
           </Link>
@@ -86,9 +86,9 @@ const Header = () => {
       </header>
 
       <div className="mobile-header" id="mobile-header">
-        <Link to={"/"} className="link">
+        <HashLink to={"/#products-container"} className="link">
           Products
-        </Link>
+        </HashLink>
         <HashLink to={"/#newsletter-container"} className="link">
           Contact Us
         </HashLink>
