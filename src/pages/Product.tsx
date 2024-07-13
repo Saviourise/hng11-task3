@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../helpers/servies";
 import Loader from "../components/Loader";
@@ -125,6 +125,24 @@ const Product = () => {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [productId]);
+
+  useEffect(() => {
+    const isInCart = checkcart(product);
+
+    if (!isInCart) {
+      return;
+    } else {
+      const newCart = cartItems.map((cartItem: any) => {
+        if (cartItem.id === product.id) {
+          return { ...cartItem, quantity: quantity };
+        } else {
+          return cartItem;
+        }
+      });
+
+      setCartItems(newCart);
+    }
+  }, [quantity]);
 
   if (error) {
     return (
