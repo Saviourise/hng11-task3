@@ -144,6 +144,23 @@ const Products = ({ title, startNumOfproducts, numOfproducts }: any) => {
     );
   }
 
+  if (categories.length === 0) {
+    return (
+      <div className="products-container" id="products-container">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100px",
+          }}
+        >
+          <h2>No Category</h2>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="products-container" id="products-container">
       {title && <div className="titleDiv">{title}</div>}
