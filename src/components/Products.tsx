@@ -63,6 +63,7 @@ const Products = ({ title, startNumOfproducts, numOfproducts }: any) => {
       setProducts(allProducts);
     } catch (error: any) {
       setError("An error occurred while fetching products");
+      console.log(error);
     } finally {
       setLoadingProducts(false);
     }
@@ -197,6 +198,7 @@ const Products = ({ title, startNumOfproducts, numOfproducts }: any) => {
                 onClick={() => {
                   getAllProducts(i + 1);
                 }}
+                key={i}
               >
                 {i + 1}
               </span>

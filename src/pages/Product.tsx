@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { getProduct } from "../helpers/servies";
+import { getProduct, getProducts } from "../helpers/servies";
 import Loader from "../components/Loader";
 import "../styles/Product.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,12 +15,15 @@ import { FaStar } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
 import Products from "../components/Products";
 import { PageContext } from "../context/PageContextProvider";
+import { ProductsContext } from "../context/ProductsContextProvider";
 
 const Product = () => {
   const productId = useParams().id || "";
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState<string | boolean>(false);
   const [product, setProduct] = React.useState<any>({});
+
+  const { products } = React.useContext(ProductsContext);
 
   const [thumbSwiper, setThumbSwiper] = React.useState<any>(null);
   const [quantity, setQuantity] = React.useState(1);
@@ -50,15 +53,48 @@ const Product = () => {
     }
   };
 
+  const getAllProducts = async () => {
+    try {
+      const products = await getProducts({
+        size: 1000,
+        page: 1,
+      });
+
+      if (products.error) {
+        return { error: true };
+      }
+
+      return products;
+    } catch (error: any) {
+      return { ...error, error: true };
+    }
+  };
+
   const getSingleProduct = async () => {
     setLoading(true);
 
     try {
-      const product = await getProduct(productId);
+      const products = await getAllProducts();
 
-      if (product.error) {
+      if (products.error) {
         return setError("An error occurred while fetching product");
       }
+
+      const product = products.items.find(
+        (product: any) => product.id === productId
+      ) as any;
+
+      if (!product) {
+        return setError("Product not found");
+      }
+
+      const desRat = JSON.parse(product.description);
+      product.description = desRat.description;
+      product.rating = desRat.rating;
+
+      product.discounted_price = product.current_price[0]["NGN"][1];
+      product.current_price = product.current_price[0]["NGN"][0];
+      setProduct(product);
 
       if (checkcart(product)) {
         const item = cartItems.find(
@@ -79,6 +115,7 @@ const Product = () => {
       setProduct(product);
     } catch (error: any) {
       setError("An error occurred while fetching product");
+      console.log(error);
     } finally {
       setLoading(false);
     }
@@ -90,7 +127,7 @@ const Product = () => {
     return;
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [productId]);
 
   if (error) {
     return (
@@ -192,18 +229,14 @@ const Product = () => {
 
             <p className="flex">
               <span className="ratings">
-                {[...Array(Number(product.extra_infos[0].value))].map(
-                  (_page, i) => {
-                    return <FaStar color="#FFAC33" key={i} size={20} />;
-                  }
-                )}
-                {[...Array(5 - Number(product.extra_infos[0].value))].map(
-                  (_page, i) => {
-                    return <CiStar color="#FFAC33" key={i} size={20} />;
-                  }
-                )}
+                {[...Array(Number(product.rating))].map((_page, i) => {
+                  return <FaStar color="#FFAC33" key={i} size={20} />;
+                })}
+                {[...Array(5 - Number(product.rating))].map((_page, i) => {
+                  return <CiStar color="#FFAC33" key={i} size={20} />;
+                })}
               </span>
-              <span>({Number(product.extra_infos[0].value).toFixed(1)})</span>
+              <span>({Number(product.rating).toFixed(1)})</span>
             </p>
 
             <div className="flex">
@@ -224,7 +257,7 @@ const Product = () => {
             <hr />
 
             <h4>About the product</h4>
-            <p>{JSON.parse(product.description).description}</p>
+            <p>{product.description}</p>
 
             <hr />
 

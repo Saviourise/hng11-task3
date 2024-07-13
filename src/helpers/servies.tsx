@@ -34,7 +34,7 @@ export const getProduct = async (id: string) => {
   try {
     const res = await axios({
       method: "GET",
-      url: `/products/${id}`,
+      url: `https://timbu-get-all-products.reavdev.workers.dev/${id}`,
       withCredentials: false,
       params: {
         organization_id: ORGID,
