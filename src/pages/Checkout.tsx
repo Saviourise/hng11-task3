@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Checkout.css";
 import CheckoutCard from "../components/CheckoutCard";
 import Newsletter from "../components/Newsletter";
@@ -8,10 +8,13 @@ import { CiCreditCard1 } from "react-icons/ci";
 import { PageContext } from "../context/PageContextProvider";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
   const { cartItems, setCartItems } = React.useContext(PageContext);
   const [deliveryFee, setDeliveryFee] = React.useState(5000);
+
+  const navigate = useNavigate();
 
   const [inputData, setInputData] = React.useState({
     name: "",
@@ -152,12 +155,6 @@ const Checkout = () => {
         }).then((result) => {
           /* Read more about handling dismissals below */
           if (result.dismiss === Swal.DismissReason.timer) {
-            Swal.fire({
-              title: `Hello ${inputData.name}`,
-              text: "Your order has been placed successfully, and will be delivered to you soon",
-              icon: "success",
-            });
-
             //reset input data
             setInputData({
               name: "",
@@ -172,6 +169,15 @@ const Checkout = () => {
             });
             //reset cart items
             setCartItems([]);
+            setTotal(0);
+
+            Swal.fire({
+              title: `Hello ${inputData.name}`,
+              text: "Your order has been placed successfully, and will be delivered to you soon",
+              icon: "success",
+            }).then(() => {
+              navigate("/");
+            });
           } else {
             Swal.fire({
               title: "Payment Cancelled",
@@ -191,6 +197,10 @@ const Checkout = () => {
         });
       });
   };
+
+  useEffect(() => {
+    setCartItems(cartItems);
+  }, [cartItems]);
 
   return (
     <div className="checkout-container">

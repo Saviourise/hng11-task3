@@ -270,10 +270,7 @@ const Product = () => {
               <span className="quantity">
                 <span
                   onClick={() => {
-                    if (
-                      product.quantity > 1 &&
-                      product.available_quantity > 0
-                    ) {
+                    if (quantity > 1 && product.available_quantity > 0) {
                       setQuantity(quantity - 1);
                     }
                   }}
