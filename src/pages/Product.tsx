@@ -142,6 +142,8 @@ const Product = () => {
 
       setCartItems(newCart);
     }
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [quantity]);
 
   if (error) {
