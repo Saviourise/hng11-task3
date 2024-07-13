@@ -3,17 +3,17 @@ import Card from "./Card";
 import "../styles/Products.css";
 import { ProductsContext } from "../context/ProductsContextProvider";
 import { CategoriesContext } from "../context/CategoriesContextProvider";
-import { getCategories, getProducts } from "../helpers/servies";
+import { getProducts } from "../helpers/servies";
 import Loader from "./Loader";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 
 const Products = ({ title, startNumOfproducts, numOfproducts }: any) => {
   const { products, setProducts }: any = React.useContext(ProductsContext);
-  const { categories, setCategories, activeCategory, setActiveCategory }: any =
+  const { categories, activeCategory, setActiveCategory }: any =
     React.useContext(CategoriesContext);
 
   const [error, setError] = React.useState<string | boolean>(false);
-  const [loadingCategories, setLoadingCategories] = React.useState(false);
+  // const [loadingCategories, setLoadingCategories] = React.useState(false);
   const [loadingProducts, setLoadingProducts] = React.useState(false);
   const [loadingText, setLoadingText] = React.useState("");
   const [productsPagination, setProductsPagination] = React.useState<{
@@ -28,24 +28,6 @@ const Products = ({ title, startNumOfproducts, numOfproducts }: any) => {
     prev: null,
   });
 
-  const getAllCategories = async () => {
-    setLoadingCategories(true);
-    setLoadingText("Fetching Categories");
-    try {
-      const categories = await getCategories();
-
-      if (categories.error) {
-        return setError("An error occurred while fetching category");
-      }
-
-      setCategories(categories.items);
-    } catch (error: any) {
-      setError("An error occurred while fetching category");
-    } finally {
-      setLoadingCategories(false);
-    }
-  };
-
   const getAllProducts = async (page: number) => {
     setLoadingProducts(true);
     setLoadingText("Fetching Products");
@@ -54,14 +36,11 @@ const Products = ({ title, startNumOfproducts, numOfproducts }: any) => {
       const products = await getProducts({
         size: 12,
         page: page,
-        categoryId: categories[activeCategory].id,
       });
 
       if (products.error) {
         return setError("An error occurred while fetching products");
       }
-
-      // console.log(products);
 
       const proPagination = {
         page: products.page,
@@ -90,17 +69,7 @@ const Products = ({ title, startNumOfproducts, numOfproducts }: any) => {
   };
 
   React.useEffect(() => {
-    (!categories || !categories.length) && getAllCategories();
-
-    return;
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [categories]);
-
-  React.useEffect(() => {
-    if (categories.length > 0) {
-      getAllProducts(1);
-    }
+    getAllProducts(1);
 
     return;
 
@@ -124,43 +93,6 @@ const Products = ({ title, startNumOfproducts, numOfproducts }: any) => {
     );
   }
 
-  if (loadingCategories) {
-    return (
-      <div className="products-container" id="products-container">
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "200px",
-            flexDirection: "column",
-            gap: 50,
-          }}
-        >
-          <Loader />
-          <h3>{loadingText}</h3>
-        </div>
-      </div>
-    );
-  }
-
-  if (categories.length === 0) {
-    return (
-      <div className="products-container" id="products-container">
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "100px",
-          }}
-        >
-          <h2>No Category</h2>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="products-container" id="products-container">
       {title && <div className="titleDiv">{title}</div>}
@@ -174,22 +106,20 @@ const Products = ({ title, startNumOfproducts, numOfproducts }: any) => {
               <span>/</span>
               <span>Wedding</span>
               <span>/</span>
-              <span>{categories[activeCategory]?.name}</span>
+              <span>{categories[activeCategory]}</span>
             </p>
           </div>
 
           <div className="firstDiv mobile">
-            <p>{categories[activeCategory]?.name}</p>
+            <p>{categories[activeCategory]}</p>
           </div>
         </>
       )}
-      {!title && categories.length > 0 && (
-        <div className="secondDiv">{categories[activeCategory]?.name}</div>
-      )}
+      {!title && <div className="secondDiv">{categories[activeCategory]}</div>}
       {!title && (
         <div className="thirdDiv">
           {categories?.length > 0 &&
-            categories.map((category: { name: string }, index: number) => {
+            categories.map((category: string, index: number) => {
               return (
                 <p
                   key={index}
@@ -200,7 +130,7 @@ const Products = ({ title, startNumOfproducts, numOfproducts }: any) => {
                     activeCategory === index ? "active" : ""
                   }`}
                 >
-                  {category.name}
+                  {category}
                 </p>
               );
             })}
