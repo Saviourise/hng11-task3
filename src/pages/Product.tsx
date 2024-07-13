@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { getProduct, getProducts } from "../helpers/servies";
+import { getProducts } from "../helpers/servies";
 import Loader from "../components/Loader";
 import "../styles/Product.css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -15,15 +15,12 @@ import { FaStar } from "react-icons/fa";
 import { CiStar } from "react-icons/ci";
 import Products from "../components/Products";
 import { PageContext } from "../context/PageContextProvider";
-import { ProductsContext } from "../context/ProductsContextProvider";
 
 const Product = () => {
   const productId = useParams().id || "";
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState<string | boolean>(false);
   const [product, setProduct] = React.useState<any>({});
-
-  const { products } = React.useContext(ProductsContext);
 
   const [thumbSwiper, setThumbSwiper] = React.useState<any>(null);
   const [quantity, setQuantity] = React.useState(1);
