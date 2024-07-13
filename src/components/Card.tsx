@@ -5,10 +5,54 @@ import { CiStar } from "react-icons/ci";
 import { IoCartOutline } from "react-icons/io5";
 import { PageContext } from "../context/PageContextProvider";
 import { Link } from "react-router-dom";
+import { IoIosHeart, IoIosHeartEmpty } from "react-icons/io";
 
 const Card = ({ product }: any) => {
   const { setCartItems, cartItems } = React.useContext(PageContext);
   const cartBtn = React.useRef<any>(null);
+
+  const wishListBtn = React.useRef<any>(null);
+  const [isInWishlist, setIsInWishlist] = React.useState(false);
+
+  const addToWishlist = (product: any) => {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+
+    wishListBtn?.current?.classList.add("bounce");
+
+    setTimeout(() => {
+      wishListBtn?.current?.classList.remove("bounce");
+    }, 1000);
+
+    // check if item is in wishlist
+    const isInWishlist = wishlist.find((item: any) => item.id === product.id);
+    if (isInWishlist) {
+      // remove item from wishlist
+      const newWishlist = wishlist.filter(
+        (item: any) => item.id !== product.id
+      );
+      localStorage.setItem("wishlist", JSON.stringify(newWishlist));
+      checkWishlist();
+      return;
+    }
+
+    const newWishlist = [...wishlist, product];
+    localStorage.setItem("wishlist", JSON.stringify(newWishlist));
+    checkWishlist();
+  };
+
+  const checkWishlist = React.useCallback(() => {
+    const wishlist = JSON.parse(localStorage.getItem("wishlist") || "[]");
+    const isInWishlist = wishlist.find((item: any) => item.id === product.id);
+    if (isInWishlist) {
+      return setIsInWishlist(true);
+    } else {
+      return setIsInWishlist(false);
+    }
+  }, [product.id]);
+
+  React.useEffect(() => {
+    checkWishlist();
+  }, [checkWishlist]);
 
   const addToCart = (product: any) => {
     cartBtn?.current?.classList.add("bounce");
@@ -42,6 +86,19 @@ const Card = ({ product }: any) => {
   return (
     <div className="card-inner-container">
       <div className="card">
+        <div
+          className="wishlist"
+          onClick={() => {
+            addToWishlist(product);
+          }}
+          ref={wishListBtn}
+        >
+          {isInWishlist ? (
+            <IoIosHeart color="red" />
+          ) : (
+            <IoIosHeartEmpty color="red" />
+          )}
+        </div>
         <Link to={`/product/${product.id}`}>
           <img
             src={`https://api.timbu.cloud/images/${product.photos[0].url}`}
